@@ -28,5 +28,6 @@ public class Task
         int CostPerHour = PriceOfTickets / Duration;
 
         Console.WriteLine($"Movies title is {MovieTitle},\nTotal cost of your tickets: {TicketNumbers * PriceOfTickets},\nSeat number {SeatLetter},\nCost per hour : {CostPerHour}");
+        Console.WriteLine($"Type of ThreeD: {ThreeD.GetType().Name}");
     }
 }
