@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class HelloWorld
+public class TaskTwo
 {
     public static void Main(string[] args)
     {
@@ -26,32 +26,6 @@ public class HelloWorld
             Console.WriteLine("Zero");
         }
 
-
-        //Console.WriteLine("Enter age:");
-        //int num2 = int.Parse(Console.ReadLine());
-        //if (num2 > 0) { 
-        //    if (num2 < 13)
-        //    {
-        //        Console.WriteLine("Child");
-        //    }
-        //    else if (13 <= num2 && num2 <= 19)
-        //    {
-        //        Console.WriteLine("Teenager");
-        //    }
-        //    else if (20 <= num2 && num2 < 60)
-        //    {
-        //        Console.WriteLine("Adult");
-        //    }
-        //    else {
-        //        Console.WriteLine("Senior");
-        //    }
-        
-        //}
-        //else
-        //{
-        //    Console.WriteLine("Enter real age");
-        //}
-
         //Ex2
 
         Console.WriteLine("Enter any number:");
@@ -70,7 +44,8 @@ public class HelloWorld
 
         Console.WriteLine("Enter any number:");
         int num3 = int.Parse(Console.ReadLine());
-        if(num3 == 5 || num3 == 10){
+        if (num3 == 5 || num3 == 10)
+        {
             Console.WriteLine("Your number either 5 or 10");
         }
         else
@@ -78,44 +53,95 @@ public class HelloWorld
             Console.WriteLine("Unknown number");
         }
 
-        //Ex4/Ex5
-        Console.WriteLine("Enter deposit number");
-        double num4 = double.Parse(Console.ReadLine());
-        if (num4 > 0 && num4 < 100) {
-            Console.WriteLine($"Your deposit: {(num4 * 0.05) + num4}, your interest: 5%");
-        }
-        else if ( num4 > 100 && num4 < 200)
+        //Ex4
+
+        Console.WriteLine("Enter the deposit amount: ");
+        double amount = Convert.ToDouble(Console.ReadLine());
+
+        double interestRate;
+
+        if (amount < 100)
         {
-            Console.WriteLine($"Your deposit: {(num4 * 0.07) + num4}, your interest: 7%");
+            interestRate = 0.05;
         }
-        else {  
-            Console.WriteLine($"Your deposit: {(num4 * 0.1) + num4}, your interest: 10%"); 
+        else if (amount >= 100 && amount <= 200)
+        {
+            interestRate = 0.07;
+        }
+        else
+        {
+            interestRate = 0.10;
         }
 
-        //Ex6/Ex7
-        Console.Write("Enter first number: ");
-        double a = Convert.ToDouble(Console.ReadLine());
+        double totalWithInterest = amount + (amount * interestRate);
+        Console.WriteLine("Deposit amount including interest: " + totalWithInterest);
 
-        Console.Write("Enter second number: ");
-        double b = Convert.ToDouble(Console.ReadLine());
+        //Ex5
+        Console.WriteLine("Enter deposit number: ");
+        double num5 = double.Parse(Console.ReadLine());
+        double interestRate2;
+        if (num5 < 100)
+        {
+            interestRate2 = 0.05;
+        }
+        else if (num5 > 100 && num5 < 200)
+        {
+            interestRate2 = 0.07;
+        }
+        else
+        {
+            interestRate2 = 0.1;
+        }
+        double finalAmount = num5 + (num5 * interestRate2) + 15;
 
-        Console.WriteLine("Enter operation number: (+, -, *)");
+        Console.WriteLine("Deposit amount including interest and bonuses: " + finalAmount);
+
+        //Ex6
+
+        Console.WriteLine("Enter operation number: 1)+ 2)- 3)*");
         string operation = Console.ReadLine();
 
 
         switch (operation)
         {
-            case "+":
+            case "1":
+                Console.WriteLine("Addition");
+                break;
+            case "2":
+                Console.WriteLine("Subtraction");
+                break;
+            case "3":
+                Console.WriteLine("Multiplication");
+                break;
+            default:
+                Console.WriteLine("Operation is undefined");
+                break;
+        }
+
+        //Ex7
+        Console.WriteLine("Enter first number: ");
+        double a = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        double b = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Enter operation number: 1)+ 2)- 3)*");
+        string operation2 = Console.ReadLine();
+
+
+        switch (operation2)
+        {
+            case "1":
                 Console.WriteLine($"Result of addition: {a + b}");
                 break;
-            case "-":
+            case "2":
                 Console.WriteLine($"Result of subtraction: {a - b}");
                 break;
-            case "*":
+            case "3":
                 Console.WriteLine($"Result of multiplication: {a * b}");
                 break;
             default:
-                Console.WriteLine("Operation is undefined.");
+                Console.WriteLine("Operation is undefined");
                 break;
         }
 
